@@ -1,0 +1,311 @@
+% !TeX encoding = UTF-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+%该模版经过再次修改，添加课堂小论文常用功能
+%0.中文支持
+%1.引用
+%2.定理排版
+%3.其他页面设置
+% Jeff Lee (李争) (http://jeff-lee.name),Email:jeff.lee(at)my.swjtu.edu.cn
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=10.5pt]{scrartcl} % A4 paper and 10.5pt（5 号） font size
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{CJKutf8}
+\usepackage{amsmath,amsfonts,amsthm,amssymb,latexsym} % Math packages
+
+\usepackage{sectsty} % Allows customizing section commands
+%%%\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\allsectionsfont{ \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{\thepage} % Page numbering for  center footer
+\fancyfoot[R]{} %Empty right footer
+\renewcommand{\baselinestretch}{1.1}% 定义行距
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\usepackage{indentfirst} %首行缩进
+\setlength{\parindent}{2em}
+ 
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{geometry}
+% %设置页边距
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} % %left,right,top,bottom,head,headsep,foot
+
+\usepackage{appendix}
+
+%%%%%%%%我的定义
+\usepackage{graphicx} 
+\usepackage{cases} 
+\usepackage{pifont} 
+
+\usepackage{bm}%%加粗
+\CJKtilde   %用于解决英文字母和汉字的间距问题。例如：变量~$x$~的值。
+\renewcommand{\CJKglue}{\hskip 0pt plus 0.08\baselineskip}              %它于必要时在汉字之间插入一个附加的空隙，以解决行的超长问题。 
+
+
+% for mathematica formulate
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}%
+\CJKindent
+\newtheorem{theorem}{{定理}} 
+\newtheorem{proposition}{{命题}} 
+\newtheorem{lemma}{{引理}} 
+\newtheorem{corollary}{{推论}}[theorem] 
+\newtheorem{definition}{{定义}} 
+\newtheorem{example}{{例}} 
+
+
+
+% % % % % % % % STANDARD REFERENCE STYLE% % % % % % % % % % %
+% %plain，按字母的顺序排列，比较次序为作者、年度和标题.
+% %unsrt，样式同plain，只是按照引用的先后排序.
+% %alpha，用作者名首字母+年份后两位作标号，以字母顺序排序.
+% %abbrv，类似plain，将月份全拼改为缩写，更显紧凑.
+% %ieeetr，国际电气电子工程师协会期刊样式.
+% %acm，美国计算机学会期刊样式.
+% %siam，美国工业和应用数学学会期刊样式.
+% %apalike，美国心理学学会期刊样式.
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% %使用引用时的编译顺序：
+% %1. latex test.tex
+% %2. bibtex test.bib test.aux
+% %3. latex test.tex
+% %4. latex test.tex
+% %5. dvipdfm test.dvi
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\sffamily
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{西南交通大学 经济管理学院 管理科学与工程系} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge 在线付费电影的定价策略研究 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{李争，13051075} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+
+
+\maketitle % Print the title
+
+
+\section{问题的提出}
+随着网络的普及及宽带的提速，在国外，YouTube虽然号称是世界上最大的免费在线视频网站，但YouTube在2009年就开始筹备通过与电影公司合作，向用户提供新电影的付费观看服务。国内的优酷，迅雷视频，搜狐视频等在最近几年也在逐步向消费者提供付费视频服务。
+
+电影网络化使得消费者只要付出远小于在电影院消费的费用就可以在网络上及时的观看到最新上映的电影。目前的网上付费观影的模式有两种，其中一种是消费者购买某一电影的观看权，然后在一定时间内（比如半个月）消费者可以不限次数的观看该部电影（搜狐视频采用这种模式）；另一种方式是在线付费视频网站按月或者按年向消费者收取费用，在这个期限内，消费者可以观看该网站上提供的任何付费视频（迅雷视频采用这种模式）。在现代信息化快节奏的社会生活中，这无疑对消费者有较大吸引力。
+
+这种观看电影的方式虽然价格便宜，形成了对电影院线市场的分流，但由于不及在影院观看电影的体验，且目前来说在线付费电影还不能和影院同步更新上映，即使在影院观看电影较为昂贵且需要消费者规划出完整的时间来欣赏电影，还是有很多消费者选择去影院观看电影。
+
+本文通过对在线付费电影定价策略进行建模，试图解释在线付费视频提供商如何根据根据影院的电影票价制定网上观看影片的最优价格，以获取最大利润。
+
+\section{文献回顾}
+随着互联网络的发展和宽带提速，国内网民数量增速惊人，国内视频网站发展迅速，截至2011年6月,中国网络视频用户达3.01亿,用户使用率为62.1\%,年用户增长率为5.9 \%\cite{GaoHui2012}。但随着国家对网络视频版权管理政策的不断完善和规范化，国内各大视频网站正在积极探索在线视频业务在符合国家政策的前提下的盈利模式。目前国内视频网站在借鉴国外视频网站盈利模式的基础上，正在探索如何从单一的广告业务盈利模式，向通过提供付费视频业务的盈利模式的转变\cite{GuoTie2011netflix}。虽然在线付费视频有很多种，包括在线付费电影，在线付费课程视频，还有有线电视行业的付费内容，本文关注的主要是新兴的互联网络在线付费电影。
+
+目前消费者观看电影的方式主要有三种，一种是去影院观看，一种是购买影视DVD进行观看，一种是在线观看（在线观看又可以分为免费观看和付费观看），但随着消费者生活水平提高和国家互联网络的提速，去影院和在线观看电影正在成为主流，而通过购买DVD的消费者越来越少。而在线付费观看电影的方式，随着各大视频网站提供商对版权问题的重视，正逐渐为消费者所接受。但无论视频网站提供的电影清晰度有多高，用户的网速有多快，通过网络的方式观看电影的体验却始终比不上在影院观看电影的体验。但相比网络观看电影，影院观看电影价格较为昂贵，使得网络付费电影还是有相当大的竞争优势。本文试图利用消费者的观影体验来作为消费者做出电影观看方式选择的依据。
+
+在对消费者对网上观看电影和在影院观看电影进行分析时，本文使用消费者偏好来衡量两种不同观影方式的差异。消费者效用函数可以用来度量消费者偏好。本文选择柯布-道格拉斯效用函数\footnote{柯布-道格拉斯函数最初用来描述生产行为。}来度量消费者偏好，参照范里安给出的对数效用函数\footnote{关于为什么选择对数效用函数，参见附录A说明}\cite{Varian2007}。
+
+为了对消费者在在线观看电影和去影院观看电影之间的选择进行建模，本文采用Hotelling Model。Hotelling Model基于产品的差异性对消费者选择进行建模，本文种的差异主要指的是消费者的体验差异\footnote{这里产品差异性也可以基于消费者剩余，Hao等人就是基于消费者剩余使用的Hotelling Model\cite{LinHao2014}}。
+
+\section{模型}
+\subsection{模型假设}
+消费者在选择是通过付费方式在网上观看电影还是去影院观看电影时，考虑的不仅仅是观看电影的价格差别，还有观看电影的体验的差别。这里使用柯布-道格拉斯对数效用函数$$U(x_1,x_2) = a \ln x_1 + (1-a) \ln x_2$$来表示以不同的形式看电影的次数的效用。其中$x_1$表示看网络电影的量，$x_2$表示去影院看电影的量.$a$表示看网络电影的消费额占总的看电影消费额的比例，所以$0 \le a \le 1$。假设消费者总的电影消费额为$m$，则通过网络看电影的需求函数为$x_1 = \frac{am}{p_1}$,通过去电影院看电影的需求函数为$x_2 = \frac{(1-a)m}{p_2}$,其中$p_1$为看一次网络电影的消费额，$p_2$为去电影院看一次电影的消费。
+
+当电影市场处于均衡状态时，消费者在两种看电影的方式之间的选择应当是无差异的。由此可以得到：$$\frac{\partial U}{\partial x_2} - t\alpha^* =\frac{\partial U}{\partial x_1}  - t(1-\alpha^*)$$
+其中$\frac{\partial U}{\partial x_2}$表示消费者对在线电影的偏好，$\frac{\partial U}{\partial x_1}$表示消费者对影院电影的偏好。
+
+我们可以得到消费者的无差异选择偏好为:$$\alpha^*  = \frac{t+\frac{1-a}{x_2} -\frac{a}{x_1}}{2t}$$
+得到的$\alpha^*$可以看作通过网络的方式观看电影占整个电影市场的份额，同样的$1-\alpha^*$表示通过影院的方式观看电影占整个电影市场的份额。
+
+\subsection{在线观影平台的利润模型}
+本文假设电影市场的利润可以分为在线观看电影所得利润和通过影院线下观看电影所得利润。那么对于线上电影平台运营商而言，其利润可以表示为:
+\begin{equation*}
+\begin{split}
+\pi_1 
+&= (p_1 - c_1)x_1\alpha^*\\
+&= (\frac{am}{x_1} - c_1)x_1(\frac{t+\frac{1-a}{x_2} -\frac{a}{x_1}}{2t})
+\end{split}
+\end{equation*}
+ 这里运营商为了维护网络观看电影的平台，购买电影版权，需要支付的边际成本为$c_1$\footnote{这里简化了在线电影平台运营费用和购买电影版权费用，影院的费用也做类似处理。}。
+ 
+本文认为电影院观影定价和在线观影定价是一个两阶段博弈过程。在第一阶段，电影院首先决定影院观影价格为$p_2$，在第二阶段，在给定影院观影价格$p_2$的情况下，在线观影平台运营商给出其最优的在线观影价格为$p_1^*$。使用逆推法先解决在线观影平台的观影价格。
+
+\proposition  对于电影院对某部电影给处的价格为$p_2$，在线电影平台对该电影的最优价格和最优观影量为$$ p_1^* = \sqrt{c_1(p_2 + mt)} \eqno(1)$$，
+$$x_1^* = \frac{am}{\sqrt{c_1(p_2 + mt)}} \eqno(2)$$ 命题1及其后续命题的证明及其推导见附录B
+
+命题1中方程(1)表明，在线观影平台给出的观影价格分别与电影院给出的观影价格和消费者用于观看电影的总费用是正相关的，这符合实际的经济生活。当影院有某"大片"上映时(意味着观影价格较高),在线观影平台如迅雷，搜狐视频或者优酷视频同步推出该电影时，也会收取较高的观影费用，而当消费者用于电影消费的资金不断增加时，在线平台观看电影的价格也随着水涨船高。
+
+
+而通过检验方程(2)关于$m$的一阶偏导:$$\frac{\partial x_1^*}{\partial m}=\frac{a}{\sqrt{(p_2+mt)c_1}}[1- \frac{mtc_1}{2(p_2+mt)c_1}] >0$$表明消费者通过电影平台观看电影的数量和消费者总的用于观看电影的费用有正相关关系。这种关系所表明的实际的经济意义为：当大众消费者可用于观影的资金越来越多时，消费者会通过在网上付费来观看更多的电影。考虑到方程(1)中在线观影价格和消费者可用于观看电影的资金的关系，可以清楚的得出如下结论，随着消费者可用于观看电影资金的增加，一方面在线电影的价格增加了，另一方面消费者在线观看电影的数量也增加了，同时如果在线运营商的运营成本保持不变，则运营商的利润也是增加的。
+
+\subsection{影院的利润模型（未得到合理解释）}
+在影院和在线观影平台的价格博弈过程中，首先是影院给出在电影院观看电影的价格，然后在线观影平台给出在线方式观看电影的价格（目前电影上映的顺序是先在影院上映，然后再出现再网络上，但不排除未来出现网络上映与影院上映同步甚至超前的方式）。
+影院的利润可以表示如下：
+\begin{equation*}
+\begin{split}
+\pi_2 
+= (p_2 - c_2)x_1(1 - \alpha^*)
+\end{split}
+\end{equation*}
+影院维护影院设施设备，购买电影版权支付的边际成本为$c_2$。
+
+根据模型假设部分的影院观影需求函数：$x_2 = \frac{(1-a)m}{p_2}$，通过影院观看电影再整个电影市场所占的比例为$\alpha^*  = \frac{t+\frac{1-a}{x_2} -\frac{a}{x_1}}{2t}$,在线观影平台利润模型中所得到的方程(2)，则影院的利润模型可以表示为：
+\begin{equation*}
+\begin{split}
+\pi_2 
+&=(p_2-c_2)\frac{(1-a)m}{p_2}[\frac{t+\frac{\sqrt{(p_2+mt)c_1}}{m}-\frac{p_2}{m}}{2t}]\\
+&= \frac{1-a}{2t}\frac{p_2-c_2}{p_2}(tm + \sqrt{(p_2+mt)c_2}-p_2)
+\end{split}
+\end{equation*}
+
+令该利润函数关于价格的偏导为0，可以求得影院的最优价格。但附录B证明了该最优价格得表示方式太过复杂，难以形成较为合理的经济解释。
+
+\section{Acknowledgments}
+本文受Hao等人关于电子书市场定价策略研究de的启发\cite{LinHao2014},文档使用\LaTeX 生成，运算使用 Mathematica\copyright 生成。文档及其源码请参考：http://jeff-lee.name/cn/publication/
+\bibliographystyle{acm}
+\bibliography{assignment.bib}
+
+%\newpage
+\appendix
+\appendixpage
+\section{}
+本文在刚开始的时候准备基于消费者剩余设计Hotelling Model，按照Hao等人在分析电子书市场定价策略中给出的模型及分析思路进行本文的分析。但是基于消费者剩余的方式在后面求解在线观影平台利润最大化时，难以求得最优解，导致无法继续分析下去。于是我转而基于消费者效用来建立Hotelling Model，本文刚开始采用的指数形势的柯布－道格拉斯效用函数，但由于该效用函数在后续的分析中存在复杂指数，使得在求解观影平台利润最大化时，难以求得最优解，于是只能放弃指数形式。根据效用函数的单调变换还是效用函数的原则,对指数效用函数进行了对数变换，其结果使得求解观影平台利润最大化时的在线观看电影的价格成为可能。
+
+但柯布－道格拉斯对数效用函数仍然使得在求解影院的最大化利润时的观看电影的价格比较复杂，这也是本文花费较长时间但却无法取得较为合理结论的原因所在。所以最终本文也只能得出关于在线电影平台的观影价格的结论，但却无法进一步分析消费者在影院观看电影时的价格的影响因素。这也导致本文长度较短。
+
+本文后续需要改进的地方就在于建立Hotelling Model时，如何选择体现产品差异化的指标，是选择消费者剩余函数，选择哪种？，还是消费者效用函数，选择哪种？不同的函数选择，导致的最终的分析结果的可解释性和复杂程度都是不同的。这也使得我更加明白了在做学术的过程中，提出一个优美简洁的模型是多么困难的一件事情。
+
+
+\section{由Mathematica生成，有改动}
+在线电影平台的利润函数：
+
+\(\pmb{\pi _1= \left(p_1-c_1\right)*x_1*\alpha ^*}\)
+
+
+\(\left(-c_1+p_1\right) x_1 \alpha ^*\)
+
+
+由柯布－道格拉斯需求函数:
+
+\(\pmb{r_1 = \left\{p_1\text{-$>$} (a m)\left/x_1\right.\right\}}\)
+
+
+\(\left\{p_1\to \frac{a m}{x_1}\right\}\)
+
+
+而$\alpha^*$的表达式为:
+
+\(\pmb{r_2 = \left\{\alpha ^* \to  \left.\left(t+ (1-a)\left/ x_2\right.-a\left/x_1\right.\right)\right/(2 t)\right\}}\)
+
+
+\(\left\{\alpha ^*\to \frac{t-\frac{a}{x_1}+\frac{1-a}{x_2}}{2 t}\right\}\)
+
+
+$\alpha^*$和$p_1$带入在线电影平台利润函数可的：
+
+\(\pmb{\pi _1 \text{/.} r_1 \text{/.}r_2}\)
+
+
+\(\frac{\left(-c_1+\frac{a m}{x_1}\right) x_1 \left(t-\frac{a}{x_1}+\frac{1-a}{x_2}\right)}{2 t}\)
+
+
+对在线电影平台求关于需求$x_1$的偏导为:
+
+\(\pmb{D\left[\pi _1 \text{/.} r_1 \text{/.}r_2,x_1\right]}\)
+
+
+\(\frac{a \left(-c_1+\frac{a m}{x_1}\right)}{2 t x_1}+\frac{\left(-c_1+\frac{a m}{x_1}\right) \left(t-\frac{a}{x_1}+\frac{1-a}{x_2}\right)}{2
+		t}-\frac{a m \left(t-\frac{a}{x_1}+\frac{1-a}{x_2}\right)}{2 t x_1}\)
+
+
+令其偏导数为0，化简可得：
+
+\(\pmb{\text{Simplify}\left[D\left[\pi _1 \text{/.} r_1 \text{/.}r_2,x_1\right]==0,\left\{x_1\neq 0,x_2\neq 0,t\neq 0\right\}\right]}\)
+
+
+\(c_1 x_1^2 \left(1-a+t x_2\right)==a^2 m x_2\)
+
+
+又由于:
+
+\(\pmb{r_3 = \left\{x_2 \to  (1-a)m\left/p_2\right.\right\}}\)
+
+
+\(\left\{x_2\to \frac{(1-a) m}{p_2}\right\}\)
+
+
+\(\pmb{\text{Simplify}\left[\text{Simplify}\left[D\left[\pi _1 \text{/.} r_1 \text{/.}r_2,x_1\right]==0,\left\{x_1\neq 0,x_2\neq 0,t\neq
+		0\right\}\right]\text{/.}r_3,\right.}
+	\pmb{\left.\left\{p_2>0,a\neq 1\right\}\right]}\)
+
+
+\(a^2 m^2==c_1 \left(m t+p_2\right) x_1^2\)
+
+
+可以求出$x_1$：
+
+\(\pmb{\text{Solve}\left[\text{Simplify}\left[\text{Simplify}\left[D\left[\pi _1 \text{/.} r_1 \text{/.}r_2,x_1\right]==0,\left\{x_1\neq
+		0,x_2\neq 0,t\neq 0\right\}\right]\text{/.}r_3,\right.\right.}
+	\pmb{\left.\left.\left\{p_2>0,a\neq 1\right\}\right],x_1\right]}\)
+
+
+\(\left\{\left\{x_1\to -\frac{a m}{\sqrt{m t c_1+c_1 p_2}}\right\},\left\{x_1\to \frac{a m}{\sqrt{m t c_1+c_1 p_2}}\right\}\right\}\)
+
+
+则此时$p_1$为:
+
+\(\pmb{p_1 = }
+	\pmb{a m \left/x_1\right. \text{/.} }
+	\pmb{\text{Solve}\left[\text{Simplify}\left[\text{Simplify}\left[D\left[\pi _1 \text{/.} r_1 \text{/.}r_2,x_1\right]==0,\left\{x_1\neq 0,x_2\neq
+		0,t\neq 0\right\}\right]\text{/.}r_3,\right.\right.}
+	\pmb{\left.\left.\left\{p_2>0,a\neq 1\right\}\right],x_1\right]}\)
+
+
+\(\left\{-\sqrt{m t c_1+c_1 p_2},\sqrt{m t c_1+c_1 p_2}\right\}\)
+
+
+%----------------------------------------------------------------------------------------
+\end{CJK}
+\end{document}
