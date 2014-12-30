@@ -41,7 +41,7 @@
 \fancyfoot[L]{} % Empty left footer
 \fancyfoot[C]{\thepage} % Page numbering for  center footer
 \fancyfoot[R]{} %Empty right footer
-\renewcommand{\baselinestretch}{1.1}% 定义行距
+\renewcommand{\baselinestretch}{1.0}% 定义行距
 \renewcommand{\headrulewidth}{0pt} % Remove header underlines
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
@@ -74,16 +74,80 @@
 % for mathematica formulate
 \usepackage{amsmath, amssymb, graphics, setspace}
 
+%\usepackage{titlesec}
+%\titleformat{section}[shape]{format}{label}{sep}{before}[after]
 
 \begin{document}
 \begin{CJK}{UTF8}{gbsn}%
 \CJKindent
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+%\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
+\centering
+%\vspace*{9cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textbf{西南交通大学研究生考试}\par % Book title
+\vspace*{3cm}
+{\huge 
+	\textbf{
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			学号 & 大作业成绩 & 平时成绩 & 总成绩\\
+			\hline
+			&   &   &  \\
+			\hline
+		\end{tabular}
+		}
+	}\par % Author name
+\vspace*{2cm}
+{\huge
+	
+\begin{flushleft}
+	\textbf{\hspace{2cm}课程名称：\underline{\hspace{1cm}博弈论\hspace{3.8cm}}}
+	\vspace{0.5cm}
+
+	\textbf{\hspace{2cm}院\hspace{0.85cm}(系)：\underline{\hspace{1cm}经济管理学院\hspace{1.5cm}}}	
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}专\hspace{1.6cm}业：\underline{\hspace{1cm}工程管理\hspace{3cm}}}
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}年\hspace{1.6cm}级：\underline{\hspace{1cm}2014级\hspace{3.7cm}}}
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}任课老师：\underline{李军,谭德庆,聂佳佳\hspace{0.5cm}}}
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}姓\hspace{1.6cm}名：\underline{\hspace{1cm}李争\hspace{4.6cm}}}\\
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}学\hspace{1.6cm}号：\underline{\hspace{1cm}13051075\hspace{2.8cm}}}
+	\vspace{0.5cm}
+	
+	\textbf{\hspace{2cm}上课时间：\underline{2014-2015第一学期\hspace{0.5cm}}}
+				
+\end{flushleft}
+\vspace{1cm}
+\begin{center}
+	\textbf{二○一四 年 十二 月}
+\end{center}
+}
+\endgroup
+
 \newtheorem{theorem}{{定理}} 
 \newtheorem{proposition}{{命题}} 
 \newtheorem{lemma}{{引理}} 
 \newtheorem{corollary}{{推论}}[theorem] 
 \newtheorem{definition}{{定义}} 
 \newtheorem{example}{{例}} 
+\renewcommand{\refname}{参考文献}   % 将References改为参考文献
+
+\renewcommand{\appendixpagename}{附录}
 
 
 
@@ -114,23 +178,26 @@
 \sffamily
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{	
-\normalfont \normalsize 
-\textsc{西南交通大学 经济管理学院 管理科学与工程系} \\ [25pt] % Your university, school and/or department name(s)
-\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge 在线付费电影的定价策略研究 \\ % The assignment title
-\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
-}
+%\title{	
+%\normalfont \normalsize 
+%\textsc{西南交通大学 经济管理学院 管理科学与工程系} \\ [25pt] % Your university, school and/or department name(s)
+%\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+%\huge 在线付费电影的定价策略研究 \\ % The assignment title
+%\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+%}
 
-\author{李争，13051075} % Your name
+%\author{李争，13051075} % Your name
 
-\date{\normalsize\today} % Today's date or a custom date
-
-
-
-\maketitle % Print the title
+%\date{\normalsize\today} % Today's date or a custom date
 
 
+
+%\maketitle % Print the title
+
+\newpage
+\begin{center}
+	\huge 在线付费电影的定价策略研究\footnote{本文受Lin等人关于电子书市场定价策略研究的启发\cite{LinHao2014}，文档使用\LaTeX 生成，符号计算过程使用 Mathematica\copyright 生成，文档及其源码请参考：http://jeff-lee.name/cn/publication/}
+\end{center}
 \section{问题的提出}
 随着网络的普及及宽带的提速，在国外，YouTube虽然号称是世界上最大的免费在线视频网站，但YouTube在2009年就开始筹备通过与电影公司合作，向用户提供新电影的付费观看服务。国内的优酷，迅雷视频，搜狐视频等在最近几年也在逐步向消费者提供付费视频服务。
 
@@ -147,7 +214,7 @@
 
 在对消费者对网上观看电影和在影院观看电影进行分析时，本文使用消费者偏好来衡量两种不同观影方式的差异。消费者效用函数可以用来度量消费者偏好。本文选择柯布-道格拉斯效用函数\footnote{柯布-道格拉斯函数最初用来描述生产行为。}来度量消费者偏好，参照范里安给出的对数效用函数\footnote{关于为什么选择对数效用函数，参见附录A说明}\cite{Varian2007}。
 
-为了对消费者在在线观看电影和去影院观看电影之间的选择进行建模，本文采用Hotelling Model。Hotelling Model基于产品的差异性对消费者选择进行建模，本文种的差异主要指的是消费者的体验差异\footnote{这里产品差异性也可以基于消费者剩余，Hao等人就是基于消费者剩余使用的Hotelling Model\cite{LinHao2014}}。
+为了对消费者在在线观看电影和去影院观看电影之间的选择进行建模，本文采用Hotelling Model。Hotelling Model基于产品的差异性对消费者选择进行建模，本文种的差异主要指的是消费者的体验差异\footnote{这里产品差异性也可以基于消费者剩余，Lin等人就是基于消费者剩余使用的Hotelling Model\cite{LinHao2014}}。
 
 \section{模型}
 \subsection{模型假设}
@@ -181,7 +248,7 @@ $$x_1^* = \frac{am}{\sqrt{c_1(p_2 + mt)}} \eqno(2)$$ 命题1及其后续命题�
 而通过检验方程(2)关于$m$的一阶偏导:$$\frac{\partial x_1^*}{\partial m}=\frac{a}{\sqrt{(p_2+mt)c_1}}[1- \frac{mtc_1}{2(p_2+mt)c_1}] >0$$表明消费者通过电影平台观看电影的数量和消费者总的用于观看电影的费用有正相关关系。这种关系所表明的实际的经济意义为：当大众消费者可用于观影的资金越来越多时，消费者会通过在网上付费来观看更多的电影。考虑到方程(1)中在线观影价格和消费者可用于观看电影的资金的关系，可以清楚的得出如下结论，随着消费者可用于观看电影资金的增加，一方面在线电影的价格增加了，另一方面消费者在线观看电影的数量也增加了，同时如果在线运营商的运营成本保持不变，则运营商的利润也是增加的。
 
 \subsection{影院的利润模型（未得到合理解释）}
-在影院和在线观影平台的价格博弈过程中，首先是影院给出在电影院观看电影的价格，然后在线观影平台给出在线方式观看电影的价格（目前电影上映的顺序是先在影院上映，然后再出现再网络上，但不排除未来出现网络上映与影院上映同步甚至超前的方式）。
+在影院和在线观影平台的价格博弈过程中，首先是影院给出在电影院观看电影的价格，然后在线观影平台给出在线方式观看电影的价格。在这种上映方式下，
 影院的利润可以表示如下：
 \begin{equation*}
 \begin{split}
@@ -202,20 +269,36 @@ $$x_1^* = \frac{am}{\sqrt{c_1(p_2 + mt)}} \eqno(2)$$ 命题1及其后续命题�
 
 令该利润函数关于价格的偏导为0，可以求得影院的最优价格。但附录B证明了该最优价格得表示方式太过复杂，难以形成较为合理的经济解释。
 
-\section{Acknowledgments}
-本文受Hao等人关于电子书市场定价策略研究de的启发\cite{LinHao2014},文档使用\LaTeX 生成，运算使用 Mathematica\copyright 生成。文档及其源码请参考：http://jeff-lee.name/cn/publication/
+\section{结论与不足}
+\subsection{结论}
+本文基于科布道格拉斯效用函数，利用Hotelling Model 对电影市场中的在线电影定价进行建模，在目前市场上主流的上映方式下，即电影首先在影院上映，然后在网上观影平台以付费的形式出现的形式，对在线付费电影如何根据院线电影的价格进行定价的问题进行了研究。
+
+通过对该模型的分析，我们可以得出如下结论:
+\begin{enumerate}
+	\item 在消费者可用于电影消费的总费用保持不变的情况下，通过院线上映的电影价格越高，则通过付费方式在网上观看该电影的价格也越高。
+	\item 在院线电影价格保持不变的情况下，消费者可用于电影消费的总费用越多，则网上付费电影提供商制定的观影价格越高。
+	\item 在院线电影价格保持不变的情况下,消费者可用于电影消费的总费用越多，消费者越愿意在网上通过付费的方式观看更多的电影。
+	\item 消费者可用于电影消费的总费用越多，则在线付费电影提供商的总利润越高。
+\end{enumerate}
+尤其结论2，3可以帮助在线付费电影提供商对消费群体进行划分，以针对不同的消费群体进行不同的营销。
+
+\subsection{不足}
+本文针对目前主流的电影上映模式还是在首先院线上映，然后在付费网络平台上映。但最近索尼影视出品的《刺杀金正恩》，却开创了首先在网上通过付费点播的方式上映，然后才是影院上映。姑且不论这部电影的内容如何，但经过黑客攻击、美朝政治、社交网络等因素的发酵后，使得这部电影的营销显得尤为成功，而网络首映更是开创了电影行业首映的先河。无疑网络首映方式下的定价策略将会和当前的电影定价策略具有本质性的区别，需要建立新的模型进行分析。
+
+本文后续需要改进的地方就在于建立Hotelling Model时，如何选择体现产品差异化的指标，是选择消费者剩余函数，选择哪种？，还是消费者效用函数，选择哪种？不同的函数选择，导致的最终的分析结果的可解释性和复杂程度都是不同的。
+
 \bibliographystyle{acm}
-\bibliography{assignment.bib}
+\bibliography{game_theory_dianying.bib}
 
 %\newpage
 \appendix
 \appendixpage
-\section{}
-本文在刚开始的时候准备基于消费者剩余设计Hotelling Model，按照Hao等人在分析电子书市场定价策略中给出的模型及分析思路进行本文的分析。但是基于消费者剩余的方式在后面求解在线观影平台利润最大化时，难以求得最优解，导致无法继续分析下去。于是我转而基于消费者效用来建立Hotelling Model，本文刚开始采用的指数形势的柯布－道格拉斯效用函数，但由于该效用函数在后续的分析中存在复杂指数，使得在求解观影平台利润最大化时，难以求得最优解，于是只能放弃指数形式。根据效用函数的单调变换还是效用函数的原则,对指数效用函数进行了对数变换，其结果使得求解观影平台利润最大化时的在线观看电影的价格成为可能。
+\section{模型的问题及其说明}
+本文在刚开始的时候准备基于消费者剩余设计Hotelling Model，按照Lin等人在分析电子书市场定价策略中给出的模型及分析思路进行本文的分析。但是基于消费者剩余的方式在后面求解在线观影平台利润最大化时，难以求得最优解，导致无法继续分析下去。于是我转而基于消费者效用来建立Hotelling Model，本文刚开始采用的指数形势的柯布－道格拉斯效用函数，但由于该效用函数在后续的分析中存在复杂指数，使得在求解观影平台利润最大化时，难以求得最优解，于是只能放弃指数形式。根据效用函数的单调变换还是效用函数的原则,对指数效用函数进行了对数变换，其结果使得求解观影平台利润最大化时的在线观看电影的价格成为可能。
 
-但柯布－道格拉斯对数效用函数仍然使得在求解影院的最大化利润时的观看电影的价格比较复杂，这也是本文花费较长时间但却无法取得较为合理结论的原因所在。所以最终本文也只能得出关于在线电影平台的观影价格的结论，但却无法进一步分析消费者在影院观看电影时的价格的影响因素。这也导致本文长度较短。
+但柯布－道格拉斯对数效用函数仍然使得在求解影院的最大化利润时的观看电影的价格比较复杂，这也是本文花费较长时间但却无法取得较为合理结论的原因所在。所以最终本文也只能得出关于在线电影平台的观影价格的结论，但却无法进一步分析消费者在影院观看电影时的价格的影响因素。这也是本文的不足之处。
 
-本文后续需要改进的地方就在于建立Hotelling Model时，如何选择体现产品差异化的指标，是选择消费者剩余函数，选择哪种？，还是消费者效用函数，选择哪种？不同的函数选择，导致的最终的分析结果的可解释性和复杂程度都是不同的。这也使得我更加明白了在做学术的过程中，提出一个优美简洁的模型是多么困难的一件事情。
+
 
 
 \section{由Mathematica生成，有改动}
@@ -307,5 +390,8 @@ $\alpha^*$和$p_1$带入在线电影平台利润函数可的：
 
 
 %----------------------------------------------------------------------------------------
+\vspace{2cm}
+\hspace{10cm}评语：
+
 \end{CJK}
 \end{document}
